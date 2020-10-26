@@ -1,0 +1,59 @@
+.slide {
+  height: 100vh;
+  position: relative;
+
+  h2 {
+    font-size: 3rem;
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+      font-size: 3.5rem;
+      text-align: left;
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    @include object-fit(cover, center);
+  }
+
+  .slide__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include media-breakpoint-up(md) {
+      top: 15%;
+      left: 6%;
+      transform: translate(0);
+    }
+  }
+}
+
+.slogan {
+  background-image: url(../img/banner.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 70vh;
+  width: 100%;
+
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+.importantInfo {
+  background-image: url(../img/importantInfo.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  width: 100%;
+}
+
+.newProducts img {
+  @include object-fit(contain, center);
+}

@@ -1,0 +1,29 @@
+@mixin hideText($width, $height, $imgUrl, $imgUrl2x) {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: image-set(
+    url($imgUrl) 1x,
+    url($imgUrl2x) 2x
+  );
+  width: $width;
+  height: $height;
+}
+
+@mixin object-fit($size, $position) {
+  object-fit: $size;
+  object-position: $position;
+}
+
+@mixin rowLimiter($row) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $row;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}

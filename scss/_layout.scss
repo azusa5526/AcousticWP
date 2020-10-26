@@ -1,0 +1,37 @@
+h1 {
+  font-size: 0;
+  a {
+    @include hideText(130px, auto, '../img/logo_sm.png', '../img/logo_sm.png');
+  }
+}
+
+.header {
+  .icon li a {
+    font-size: 1.25rem;
+  }
+}
+
+.footer {
+  li a {
+    font-size: 1.5rem;
+  }
+
+  img {
+    max-width: 130px;
+  }
+}
+
+.transition {
+  transition:  0.2s ease-out;
+}
+
+//dynamic
+.whiteIcon {
+  @include hideText(130px, auto, '../img/logo_sm_white.png', '../img/logo_sm_white.png');
+}
+.blackIcon {
+  @include hideText(130px, auto, '../img/logo_sm.png', '../img/logo_sm.png');
+}
+.shadowBottom {
+  box-shadow: 0px 0px 8px 0px $gray-600;
+}

@@ -1,0 +1,3 @@
+.productRecommanded img{
+  @include object-fit(contain, center);
+}

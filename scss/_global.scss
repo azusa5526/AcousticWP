@@ -1,0 +1,101 @@
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  display: block;
+  width: 100%;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.bg-glass {
+  backdrop-filter: blur(10px);
+}
+
+//card
+.card-img-top img {
+  height: 250px;
+  width: 100%;
+  object-position: center;
+}
+
+.cardHover--scale {
+  a {
+    transform: scale(1);
+    transition: ease-out;
+    transition-duration: 0.2s;
+
+  
+    &:hover {
+      transform: scale(1.02);
+      transition: ease-out;
+      transition-duration: 0.2s;
+      box-shadow: $box-shadow;
+    }
+  }
+}
+
+.cardHover--lineStretch  {
+  a {
+    position: relative;
+
+    &:hover {
+      text-decoration: none;
+  
+      &::after {
+        right: 0;
+        left: 0;
+        transition: ease-out;
+        transition-duration: 0.3s;
+      }
+    }
+  
+    &::after {
+      content: "";
+      position: absolute;
+      right: 50%;
+      left: 50%;
+      bottom: -4px;
+      height: 2px;
+      background-color: $primary;
+      transition: ease-out;
+      transition-duration: 0.3s;
+    }
+  }
+}
+
+.cardHover--imgScaleUp {
+  img {
+    transform: scale(1);
+    transition: ease-out;
+    transition-duration: 0.4s;
+  }
+  &:hover {
+    img {
+      transform: scale(1.05);
+      transition: ease-out;
+      transition-duration: 0.4s;
+    }
+  }
+
+  .card-img-top {
+    overflow: hidden;
+  }
+}
+
+//row limit
+.rowLimit-1 {
+  @include rowLimiter(1);
+}
+.rowLimit-2 {
+  @include rowLimiter(2);
+}
