@@ -1,3 +1,6 @@
+import Swiper from 'swiper';
+import 'swiper/swiper-bundle.css';
+
 let swiper1 = new Swiper(".swiper1", {
   loop: true,
   autoplay: { delay: 4000 },

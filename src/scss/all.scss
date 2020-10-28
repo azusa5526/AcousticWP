@@ -1,0 +1,16 @@
+/* --- Required --- */
+@import "~bootstrap/scss/functions";
+@import "./mixin";     //custom
+@import "./helpers/variables";    //custom
+@import "~bootstrap/scss/mixins/";
+
+/* --- Bootstrap main --- */
+@import "~bootstrap/scss/bootstrap.scss";
+
+/* --- pages --- */
+@import './global';
+@import './layout';
+@import './index';
+@import './products';
+@import './singleProduct';
+@import './news';
