@@ -1,4 +1,4 @@
-import Swiper from 'swiper';
+import Swiper from '../../node_modules/swiper/swiper-bundle';
 import 'swiper/swiper-bundle.css';
 
 let swiper1 = new Swiper(".swiper1", {
@@ -39,10 +39,6 @@ let galleryThumbs = new Swiper('.gallery-thumbs', {
 });
 let galleryTop = new Swiper('.gallery-top', {
   spaceBetween: 10,
-  // navigation: {
-  //   nextEl: '.swiper-button-next',
-  //   prevEl: '.swiper-button-prev',
-  // },
   thumbs: {
     swiper: galleryThumbs
   }
