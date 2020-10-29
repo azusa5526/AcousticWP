@@ -2,6 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -69,14 +70,17 @@ module.exports = {
       },
 
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|ico)$/i,
         use: [
           {
-            loader: "file-loader",
+            loader: "url-loader",
             options: {
               name: 'img/[name].[ext]',
+              limit: 8192,
+              fallback: require.resolve('file-loader'),
             },
           },
+
         ],
       },
 
@@ -87,6 +91,7 @@ module.exports = {
           loader: "babel-loader",
         },
       },
+
     ],
   },
   plugins: [
@@ -120,6 +125,15 @@ module.exports = {
       template: './src/appointment.html',
       filename: 'appointment.html',
       chunks: ["appointment"], 
+    }),
+
+    new CopyPlugin({
+      patterns: [
+        {
+          from: './src/img',
+          to: './img',
+        },
+      ],
     }),
   ],
 };
