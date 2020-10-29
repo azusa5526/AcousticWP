@@ -19,9 +19,9 @@
   <div class="header">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadowBottom">
       <h1 class="mb-0 ml-sm-6 mr-10 py-6"><a class="navbar-brand p-0" href="index.html">Navbar</a></h1>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarToggler"
         aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <i class="fas fa-bars text-primary"></i>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarToggler">
@@ -49,88 +49,85 @@
   </div>
 
   <!-- content start here -->
+  <div class="content">
+    <div class="appointment container mb-12">
+      <div class="text-center py-6 py-md-8">
+        <h2>預約試聽</h2>
+      </div>
 
-  <div class="appointment container mb-12">
-    <div class="text-center py-6 py-md-8">
-      <h2>預約試聽</h2>
+      <form class="px-0 px-md-12 px-lg-13 mb-11">
+        <h4 class="mb-6">預約內容</h4>
+
+        <div class="form-group row no-gutters align-items-center">
+          <div class="col-sm-3 col-lg-2">
+            <label for="serviceSelect">預約項目</label>
+          </div>
+          <div class="col-sm-9 col-lg-10">
+            <select class="form-control" id="serviceSelect">
+              <option class="d-none">--- 請選擇 ---</option>
+              <option value="書架型">書架型音響試聽</option>
+              <option value="落地型">落地型音響試聽</option>
+              <option value="家庭劇院">家庭劇院音響試聽</option>
+              <option value="其他">其他器材適用(AMP、SUB)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row no-gutters align-items-center">
+          <div class="col-sm-3 col-lg-2 pr-0">
+            <label for="productName">詳細型號</label>
+          </div>
+          <div class="col-sm-9 col-lg-10">
+            <input type="text" class="form-control" id="productName">
+          </div>
+        </div>
+
+        <div class="form-group row no-gutters align-items-center mb-12">
+          <div class="col-sm-3 col-lg-2 pr-0">
+            <label for="date">預約時間</label>
+          </div>
+          <div class="col-sm-9 col-lg-10">
+            <input type="datetime-local" class="form-control" id="tel">
+          </div>
+        </div>
+
+        <h4 class="mb-6">聯絡資料</h4>
+
+        <div class="form-group row no-gutters align-items-center">
+          <div class="col-sm-3 col-lg-2 pr-0">
+            <label for="name">預約人姓名</label>
+          </div>
+          <div class="col-sm-9 col-lg-10">
+            <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+          </div>
+        </div>
+
+        <div class="form-group row no-gutters align-items-center">
+          <div class="col-sm-3 col-lg-2 pr-0">
+            <label for="email">Email信箱</label>
+          </div>
+          <div class="col-sm-9 col-lg-10">
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+          </div>
+        </div>
+
+        <div class="form-group row no-gutters align-items-center">
+          <div class="col-sm-3 col-lg-2 pr-0">
+            <label for="tel">手機號碼</label>
+          </div>
+          <div class="col-sm-9 col-lg-10">
+            <input type="tel" class="form-control" id="tel">
+          </div>
+        </div>
+
+        <button type="submit" class="offset-sm-3 offset-lg-2 btn btn-primary px-8">送出預約申請</button>
+      </form>
     </div>
-
-    <form class="px-0 px-md-12 px-lg-13 mb-11">
-      <h4 class="mb-6">預約內容</h4>
-
-      <div class="form-group row no-gutters align-items-center">
-        <div class="col-sm-3 col-lg-2">
-          <label for="serviceSelect">預約項目</label>
-        </div>
-        <div class="col-sm-9 col-lg-10">
-          <select class="form-control" id="serviceSelect">
-            <option class="d-none">--- 請選擇 ---</option>
-            <option value="書架型">書架型音響試聽</option>
-            <option value="落地型">落地型音響試聽</option>
-            <option value="家庭劇院">家庭劇院音響試聽</option>
-            <option value="其他">其他器材適用(AMP、SUB)</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-group row no-gutters align-items-center">
-        <div class="col-sm-3 col-lg-2 pr-0">
-          <label for="productName">詳細型號</label>
-        </div>
-        <div class="col-sm-9 col-lg-10">
-          <input type="text" class="form-control" id="productName">
-        </div>
-      </div>
-
-      <div class="form-group row no-gutters align-items-center mb-12">
-        <div class="col-sm-3 col-lg-2 pr-0">
-          <label for="date">預約時間</label>
-        </div>
-        <div class="col-sm-9 col-lg-10">
-          <input type="datetime-local" class="form-control" id="tel">
-        </div>
-      </div>
-
-      <h4 class="mb-6">聯絡資料</h4>
-
-      <div class="form-group row no-gutters align-items-center">
-        <div class="col-sm-3 col-lg-2 pr-0">
-          <label for="name">預約人姓名</label>
-        </div>
-        <div class="col-sm-9 col-lg-10">
-          <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
-        </div>
-      </div>
-
-      <div class="form-group row no-gutters align-items-center">
-        <div class="col-sm-3 col-lg-2 pr-0">
-          <label for="email">Email信箱</label>
-        </div>
-        <div class="col-sm-9 col-lg-10">
-          <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-        </div>
-      </div>
-
-      <div class="form-group row no-gutters align-items-center">
-        <div class="col-sm-3 col-lg-2 pr-0">
-          <label for="tel">手機號碼</label>
-        </div>
-        <div class="col-sm-9 col-lg-10">
-          <input type="tel" class="form-control" id="tel">
-        </div>
-      </div>
-
-      <button type="submit" class="offset-sm-3 offset-lg-2 btn btn-primary px-8">送出預約申請</button>
-    </form>
-
-
   </div>
-
-
   <!-- content end here -->
 
-  <div class="contaier-fluid bg-primary">
-    <div class="footer container">
+  <footer class="footer contaier-fluid bg-primary">
+    <div class="container">
       <div class="row justify-content-between align-items-center">
         <div class="col-auto py-6 px-6 px-sm-9 mr-md-auto">
           <img src="./img/logo_sm_white.png" alt="">
@@ -144,7 +141,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </footer>
 </body>
 
 </html>

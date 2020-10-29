@@ -1,6 +1,7 @@
 let nav = document.querySelector(".header .navbar");
 let navLink = document.querySelectorAll(".header .navbar a");
 let navIcon = document.querySelector(".header h1 a");
+let navToggleIcon = document.querySelector(".header .navbar-toggler i");
 let lastScrollY = 0;
 
 window.addEventListener("scroll", function () {
@@ -13,6 +14,9 @@ window.addEventListener("scroll", function () {
     navIcon.classList.add('whiteIcon');
     navIcon.classList.remove('blackIcon');
 
+    navToggleIcon.classList.add('text-secondary');
+    navToggleIcon.classList.remove('text-primary');
+
     navLink.forEach(function(item) {
       item.classList.add('text-white');
       item.classList.remove('text-primary');
@@ -20,6 +24,9 @@ window.addEventListener("scroll", function () {
   } else {
     nav.classList.remove('bg-transparent');
     nav.classList.add('bg-white', 'shadowBottom');
+
+    navToggleIcon.classList.add('text-primary');
+    navToggleIcon.classList.remove('text-secondary');
 
     navIcon.classList.add('blackIcon');
     navIcon.classList.remove('whiteIcon');
