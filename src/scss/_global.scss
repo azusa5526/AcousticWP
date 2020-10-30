@@ -99,3 +99,6 @@ ul {
 .rowLimit-2 {
   @include rowLimiter(2);
 }
+.rowLimit-3 {
+  @include rowLimiter(3);
+}

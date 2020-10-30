@@ -2,11 +2,18 @@
   height: 100vh;
   position: relative;
 
+  .swiper-slide {
+    height: 80%;
+    @include media-breakpoint-up(sm) {
+      height: 100%;
+    }
+  }
+
   h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(sm) {
       font-size: 3.5rem;
       text-align: left;
     }
@@ -20,12 +27,13 @@
   }
 
   .slide__title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background-color: $primary;
+    height: 20vh;
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(sm) {
+      background-color: transparent;
+      height: auto;
+      position: absolute;
       top: 15%;
       left: 6%;
       transform: translate(0);
