@@ -7,7 +7,7 @@ let lastScrollY = 0;
 window.addEventListener("scroll", function () {
   let st = this.scrollY;
   //sroll top
-  if (st == 0) {
+  if (st < 5) {
     nav.classList.remove('bg-white', 'shadowBottom');
     nav.classList.add('bg-transparent');
 

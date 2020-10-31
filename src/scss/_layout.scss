@@ -53,9 +53,17 @@ body {
   padding: 0;
 }
 .content {
-  box-sizing: border-box; /*為元素指定的任何內邊距和邊框都將在已設定的寬度和高度內進行繪製*/
-  min-height: calc(100% - 80px);
+  box-sizing: border-box;
+  min-height: calc(100% - 56px);
   padding-bottom: 67.22px;
+
+  @include media-breakpoint-up(sm) {
+    min-height: calc(100% - 64px);
+  }
+
+  @include media-breakpoint-up(md) {
+    min-height: calc(100% - 72px);
+  }
 }
 
 .footer {
