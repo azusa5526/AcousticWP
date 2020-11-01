@@ -3,6 +3,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyPlugin = require('copy-webpack-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+const glob = require('glob-all');
 
 module.exports = {
   entry: {
@@ -20,6 +22,30 @@ module.exports = {
     modules: ["node_modules"],
     alias: {
       "@img": path.resolve(__dirname, "src/img"),
+    },
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          chunks: 'initial',
+          name: 'vendors',
+          priority: 20,
+          enforce: true,
+        },
+
+        common: {
+          chunks: 'initial',
+          minSize: 0,
+          name: 'common',
+          minChunks: 2,
+          priority: 10,
+        },
+      },
+    },
+    runtimeChunk: {
+      name: 'manifest',
     },
   },
 
@@ -134,6 +160,19 @@ module.exports = {
           to: './img',
         },
       ],
+    }),
+
+    new PurgecssPlugin({
+      paths: glob.sync(
+        [
+          `${path.resolve(__dirname, 'src')}/**/*`,
+          path.resolve(__dirname, 'node_modules/jquery/dist/jquery.slim.js'),
+          path.resolve(__dirname, 'node_modules/bootstrap/dist/js/bootstrap.bundle.js'),
+        ],
+        {
+          nodir: true,
+        }
+      ),
     }),
   ],
 };
