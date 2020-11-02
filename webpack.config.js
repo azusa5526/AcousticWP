@@ -7,6 +7,7 @@ const PurgecssPlugin = require('purgecss-webpack-plugin');
 const glob = require('glob-all');
 
 module.exports = {
+  devtool: 'source-map',
   entry: {
     main: "./src/main.js",
     products: './src/products.js',
@@ -71,6 +72,9 @@ module.exports = {
           },
           {
             loader: "css-loader",
+            options: {
+              sourceMap: true,
+            },
           },
           {
             loader: "postcss-loader",
@@ -81,6 +85,7 @@ module.exports = {
               sassOptions: {
                 outputStyle: "expanded",
               },
+              sourceMap: true,
             },
           },
         ],
@@ -125,6 +130,17 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: "babel-loader",
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: [
+              [
+                '@babel/plugin-transform-runtime',
+                {
+                  corejs: 3,
+                },
+              ],
+            ],
+          },
         },
       },
 
@@ -140,7 +156,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       filename: "index.html",
-      chunks: ["main"], // 僅添加名為 main 的 chunk
+      chunks: ["main"],
     }),
     new HtmlWebpackPlugin({
       template: './src/products.html',
