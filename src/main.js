@@ -8,3 +8,8 @@ import './js/swiperInit';
 
 //scss
 import './scss/all.scss';
+
+//HMR Support
+if (module.hot) {
+  module.hot.accept();
+}

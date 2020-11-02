@@ -48,6 +48,14 @@ module.exports = {
       name: 'manifest',
     },
   },
+ 
+  devServer: {
+    open: true,
+    port: 9000,
+    hot: true,
+    contentBase: './src/index.html',
+    watchContentBase: true,
+  },
 
   module: {
     rules: [
@@ -58,6 +66,7 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
             options: {
               publicPath: '../',
+              hmr: true,
             },
           },
           {
@@ -84,6 +93,7 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
             options: {
               publicPath: "../",
+              hmr: true,
             },
           },
           {
